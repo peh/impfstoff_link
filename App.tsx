@@ -1,7 +1,10 @@
 import React from 'react';
-import {Container, Text} from 'native-base';
 import * as Font from 'expo-font';
 import {Ionicons} from '@expo/vector-icons';
+import {QueryClient, QueryClientProvider} from 'react-query'
+import Application from "./src/components/Application";
+
+const queryClient = new QueryClient()
 
 export default function App() {
 
@@ -16,8 +19,8 @@ export default function App() {
     }
 
     return (
-        <Container>
-            <Text>Open up App.js to start working on your app!</Text>
-        </Container>
+        <QueryClientProvider client={queryClient}>
+            <Application/>
+        </QueryClientProvider>
     );
 }
