@@ -36,7 +36,7 @@ export default function Application() {
         if (data?.data) {
             const playSound = !!data.data.stats.find(l => l.open)
             if (playSound)
-                Vibration.vibrate([1000, 1000, 1000, 1000, 1000])
+                Vibration.vibrate([1000, 200, 1000])
         }
     }, [data?.data])
 
